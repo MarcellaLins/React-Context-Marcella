@@ -1,4 +1,8 @@
+import { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
+import { ThemeArea } from './context/ThemeContext';
 import { ContactsSection } from './components/ContactsSection';
+import { ThemeSwitcher } from './components/ThemeSwitcher';
 import './App.css';
 
 const contacts1 = [
@@ -12,11 +16,28 @@ const contacts2 = [
 ];
 
 export default function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <h1>Contacts</h1>
-      <ContactsSection contacts={contacts1} name="Family" />
-      <ContactsSection contacts={contacts2} name="Friends" />
+    <div className={`App theme-${theme}`}>
+
+      {/* TOPO */}
+      <div className="header">
+        <h1>Contacts</h1>
+        <ThemeSwitcher />
+      </div>
+
+      {/* SEÇÕES */}
+      <div className="sections">
+        <ThemeArea initialTheme="light">
+          <ContactsSection contacts={contacts1} name="Family" />
+        </ThemeArea>
+
+        <ThemeArea initialTheme="dark">
+          <ContactsSection contacts={contacts2} name="Friends" />
+        </ThemeArea>
+      </div>
+
     </div>
   );
 }

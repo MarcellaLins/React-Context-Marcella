@@ -1,18 +1,106 @@
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
+  min-height: 100vh;
   font-family: sans-serif;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.App.theme-light {
+  background: #f5f5f5;
+  color: #222;
+}
+
+.App.theme-dark {
+  background: #140021;
+  color: #e0ccff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+.section {
+  width: 260px;
+  padding: 20px;
+  border-radius: 14px;
   text-align: center;
 }
 
-.theme-dark {
-  background: black;
-  color: #ddd;
-  padding: 5px;
-  margin: 2px;
+.section.theme-light {
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.theme-light {
-  background: white;
-  color: #111;
-  padding: 5px;
-  margin: 2px;
+.section.theme-dark {
+  background: #1f0033;
+  box-shadow: 0 4px 12px rgba(138,43,226,0.3);
+}
+
+
+.contact-item {
+  padding: 8px;
+  margin: 6px auto;
+  border-radius: 8px;
+  max-width: 220px;
+}
+
+.contact-item.theme-light {
+  background: #f0f0f0;
+  color: #222;
+}
+
+
+.contact-item.theme-dark {
+  background: #2a0040;
+  color: #e0ccff;
+}
+
+
+.App.theme-light h1 {
+  color: #a678e2; 
+}
+
+.App.theme-dark h1 {
+  color: #e0ccff; 
+}
+
+
+.App.theme-light h2 {
+  color: #53128f;
+}
+
+.App.theme-dark h2 {
+  color: #caa6ff;
+}
+
+button {
+  background: #6a0dad;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: #8a2be2;
 }
